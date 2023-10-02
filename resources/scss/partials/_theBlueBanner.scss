@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+.banner {
+    background-color: $color_Primary;
+}
+
+.banner ul {
+    list-style: none;
+    margin: 0;
+}
+
+.banner img {
+    width: 45px;
+}
+
+.banner .locatorIcon {
+    width: 35px;
+}
+
+.banner .iconName {
+    font-size: 0.9rem;
+    color: white;
+}
