@@ -2,7 +2,7 @@
 
   .comicsContainer {
     background-color: $color_Dark;
-    padding: 3rem 0rem;
+    padding: 0rem 0rem 3rem 0rem;
   }
 
   .jumbotron {
@@ -12,17 +12,37 @@
   }
 
 .cardContainer img {
-    width: 100%;
-    height: 255px;
+  width: 100%;
+  height: 420px;
 }
 
 .comicName {
     text-transform: uppercase;
     color: white;
     font-weight: bold;
-    font-size: 0.75rem;
+    font-size: .9rem;
 }
 
 .cardContainer {
     margin-bottom: 0.8rem;
+
+    a {
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+      text-decoration-color: white;
+    }
+}
+
+.comicDetails {
+  color: white;
+  list-style: none;
+
+  .list_item_title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #b03131;
+  }
 }

@@ -1,26 +1,6 @@
 @extends("layouts.homePublic")
 
 @section("mainContent")
-    {{-- <main>
-        <div class="jumbotron"></div>
-
-        <div class="comicsContainer">
-            <div class="container">
-                <div class="row row-cols-6">
-                    @foreach ($comics as $comic)
-                        <div class="col">
-                            <div class="cardContainer">
-                                <img src={{ $comic["thumb"] }} alt="">
-                        
-                                <div class="comicName"> {{ $comic["series"] }}</div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </div>  
-    </main> --}}
-
     <main>
         <div class="jumbotron"></div>
 
@@ -32,7 +12,7 @@
                             <h6>IL NOSTRO CATALOGO</h6>
                             <h1>UN SACCO DI TITOLI</h1>
                             <p>Le grandi storie dei supereroi DC ti aspettano! Da Batman a Superman fino a flash. Scopri i nostri fumetti</p>
-                            <a href="" class="btn btn-outline-light">SCOPRI I NOSTRI COMICS!</a>
+                            <a href="{{ route("comics.index") }}" class="btn btn-outline-light">SCOPRI I NOSTRI COMICS!</a>
                         </div>
                     </div>
 

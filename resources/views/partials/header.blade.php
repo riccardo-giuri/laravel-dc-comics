@@ -16,13 +16,18 @@
 <header class="pb-2 pt-2">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="imgContainer">
-            <img src="/images/dc-logo.png" alt="">
+            <a href={{route("index")}}><img src="/images/dc-logo.png" alt=""></a>
         </div>
     
         <ul class="nav nav-underline d-flex gap-4">
             @foreach ($nav_Links as $link )
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{{ Str::upper($link["name"]) }}</a>
+                    <a class="nav-link" href=
+                    @if($link["name"] === "comics")
+                        {{route("comics.index")}}
+                    @endif>
+
+                    {{ Str::upper($link["name"]) }}</a>
                 </li>
             @endforeach
     
