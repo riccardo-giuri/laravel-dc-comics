@@ -4,6 +4,9 @@
     <main>
         <div class="comicsContainer">
             <h1 class="text-center text-light mb-4 pt-4">Lista Comics</h1>
+            <div class="text-center mb-4">
+                <a href={{route("comics.create")}} class="btn btn-outline-light">Aggiungi un nuovo fumetto</a>
+            </div>
 
             <div class="container">
                 <div class="row row-cols-4">

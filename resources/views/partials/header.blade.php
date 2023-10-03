@@ -1,15 +1,45 @@
 @php
     $nav_Links = [
-                ["name" => "Characters"],
-                [ "name" => "comics"],
-                [ "name" => "movies"],
-                [ "name" => "tv"],
-                [ "name" => "games"],
-                [ "name" => "collectibles"],
-                [ "name" => "videos"],
-                [ "name" => "fans"],
-                [ "name" => "news"],
-                [ "name" => "shop"]
+                [
+                    "name" => "Home",
+                    "link_route" => "/"
+                ],
+                [ 
+                    "name" => "comics",
+                    "link_route" => "/comics"
+                ],
+                [ 
+                    "name" => "movies",
+                    "link_route" => "#"
+                ],
+                [ 
+                    "name" => "tv",
+                    "link_route" => "#"
+                ],
+                [ 
+                    "name" => "games",
+                    "link_route" => "#"
+                ],
+                [ 
+                    "name" => "collectibles",
+                    "link_route" => "#"
+                ],
+                [ 
+                    "name" => "videos",
+                    "link_route" => "#"
+                ],
+                [ 
+                    "name" => "fans",
+                    "link_route" => "#"
+                ],
+                [ 
+                    "name" => "news",
+                    "link_route" => "#"
+                ],
+                [ 
+                    "name" => "shop",
+                    "link_route" => "#"
+                ]
 ];
 @endphp
 
@@ -22,10 +52,7 @@
         <ul class="nav nav-underline d-flex gap-4">
             @foreach ($nav_Links as $link )
                 <li class="nav-item">
-                    <a class="nav-link" href=
-                    @if($link["name"] === "comics")
-                        {{route("comics.index")}}
-                    @endif>
+                    <a class="nav-link" href={{$link["link_route"]}}>
 
                     {{ Str::upper($link["name"]) }}</a>
                 </li>

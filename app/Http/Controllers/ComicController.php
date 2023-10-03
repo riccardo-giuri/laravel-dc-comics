@@ -35,10 +35,11 @@ class ComicController extends Controller
         $newComic->series = $data["series"];
         $newComic->sale_date = $data["sale_date"];
         $newComic->type = $data["type"];
-        $newComic->artists = json_encode($data["artists"]);
-        $newComic->writers = json_encode($data["writers"]);
+        $newComic->artists = json_encode(explode(",", $data["artists"]));
+        $newComic->writers = json_encode(explode(",", $data["writers"]));
 
-        $newComic->save();
+        dd($newComic);
+        //$newComic->save();
 
         return redirect()->route('comics.index');
     }

@@ -52,14 +52,15 @@
                     <textarea class="form-control" name="description"></textarea>
                 </div>
                 <div class="mb-3 text-light">
-                    <label for="form-label">Artisti</label>
+                    <label for="form-label">Artisti (divisi da una virgola e senza spazi)</label>
                     <input type="text" class="form-control" name="artists">
                 </div>
                 <div class="mb-3 text-light">
-                    <label for="form-label">Scrittori</label>
+                    <label for="form-label">Scrittori (divisi da una virgola e senza spazi)</label>
                     <input type="text" class="form-control" name="writers">
                 </div>
-                <button class="btn btn-primary">Salva</button>
+                <a href={{route("comics.index")}} class="btn btn-outline-light me-2">Indietro</a>
+                <button class="btn btn-outline-light">Salva</button>
             </form>
         </div>
     </div>
