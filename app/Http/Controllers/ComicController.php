@@ -18,4 +18,28 @@ class ComicController extends Controller
 
         return view("comics.show", ["selectedComic" => $selectedComic]);
     }
+
+    public function create() {
+        return view("comics.create");
+    }
+
+    public function store(Request $request) {
+        $data = $request->all();
+
+        $newComic = new Comic();
+
+        $newComic->title = $data["title"];
+        $newComic->description = $data["description"];
+        $newComic->imageURL = $data["imageURL"];
+        $newComic->price = $data["price"];
+        $newComic->series = $data["series"];
+        $newComic->sale_date = $data["sale_date"];
+        $newComic->type = $data["type"];
+        $newComic->artists = json_encode($data["artists"]);
+        $newComic->writers = json_encode($data["writers"]);
+
+        $newComic->save();
+
+        return redirect()->route('comics.index');
+    }
 }
