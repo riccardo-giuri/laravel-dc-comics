@@ -14,7 +14,7 @@ class ComicController extends Controller
     }
 
     public function show($id) {
-        $selectedComic = Comic::find($id);
+        $selectedComic = Comic::findorFail($id);
 
         return view("comics.show", ["selectedComic" => $selectedComic]);
     }
@@ -38,9 +38,38 @@ class ComicController extends Controller
         $newComic->artists = json_encode(explode(",", $data["artists"]));
         $newComic->writers = json_encode(explode(",", $data["writers"]));
 
-        dd($newComic);
-        //$newComic->save();
+        $newComic->save();
 
         return redirect()->route('comics.index');
+    }
+
+    public function destroy($id) {
+        $comic = Comic::findorFail($id);
+
+        $comic->delete();
+
+        return redirect()->route('comics.index');
+    }
+
+    public function edit($id) {
+        $selectedComic = Comic::find($id);
+
+        $selectedComic->artists = json_decode($selectedComic->artists);
+        $selectedComic->writers = json_decode($selectedComic->writers);
+
+        return view("comics.edit", ["selectedComic" => $selectedComic]);
+    }
+
+    public function update(Request $request, $id) {
+        $comic = Comic::findorFail($id);
+
+        $data = $request->all();
+
+        $data["artists"] = json_encode(explode(",", $data["artists"]));
+        $data["writers"] = json_encode(explode(",", $data["writers"]));
+
+        $comic->update($data);
+
+        return redirect()->route("comics.show", $id);
     }
 }

@@ -43,6 +43,18 @@
                                 <span class="list_item_title">Artisti: </span>
                                 <span>{{$selectedComic->artists}}</span>
                             </li>
+                            <li>
+                                <div class="route_buttons d-flex gap-2 mt-2">
+                                    <a href={{route("comics.edit", $selectedComic->id)}} class="btn btn-outline-light">Modifica Comic</a>
+                                    <form action="{{route("comics.destroy", $selectedComic->id)}}" method="POST">
+                                        @csrf
+
+                                        @method('delete')
+
+                                        <input type="submit" value="Cancella Comic" class="btn btn-outline-light">
+                                    </form>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
